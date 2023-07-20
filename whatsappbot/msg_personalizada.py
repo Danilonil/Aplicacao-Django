@@ -18,7 +18,7 @@ Já salvei o seu número aqui nos meus contatos.'''
     
 #------------------------------------------------------
 
-    def saudação(nome, cliente_novo):
+    def saudação(nome, cliente_novo=False):
         resposta =  f''' Olá {nome}, eu sou o Nil,
 Assistente virtual do Danilo.🤖
 
@@ -58,8 +58,8 @@ ou clique em saber mais. 👇👇👇
 
     def nao_entendi():
         return '''
-Desculpe, não consegui te entender. 😞
-Digite uma das opções acima. 👆👆
+Desculpe, não consegui te entender 😞
+Digite uma das opções abaixo 👇👇
 
 '''
 
@@ -76,7 +76,7 @@ Inicializando simulação....
         return'''
 ....Fim da simulação
 '''
-#------------------------------------------------------
+#SIMULAÇÃO DE BARBEARIA ----------------------------------------------------------------------------------------------------------------
 
     def barbearia_saudacao(nome):
         sleep(1.5)
@@ -121,8 +121,36 @@ Corte padrão {i*13} R$  25,00
 Barba, cabelo e bigode {i*3} R$  50,00
 Luzes {i*20} R$ 100,00
 '''
+#SIMULAÇÃO DE PIZZARIA ----------------------------------------------------------------------------------------------------------------
+
+    def pizzaria_saudacao(nome):
+        sleep(1.5)
+        resposta = f'''
+Olá {nome}, eu sou o Nil,
+Assistente virtual da 
+pizzaria da dona Maria 🤖 
+
+como posso ajudar?
+
+1. Cardápio 👨‍🍳
+2. Fazer pedido 😋🍕🍕
+3. Meu pedido está atrasado ⏱️😞 
+4. Finalizar simulação 
+'''
+
+        return resposta
+    
 #------------------------------------------------------
 
-    
+    def cardapio():
+        return '''
+Aqui está o nosso cardápio 
+
+
+Quando estiver pronto para 
+fazer o seu pedido,
+
+é só me chamar ok
+'''
 
 

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse, FileResponse
 from .funções import *
 from pathlib import Path
 from dotenv import load_dotenv
@@ -17,6 +17,13 @@ load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 def home(request):
     return render(request, 'mysite/index.html', {})
+
+
+def cardapio_pdf(request):
+    pdf = os.path.join('static/staticfiles', 'cardápio.pdf')
+    return FileResponse(open(pdf, 'rb'), content_type='application/pdf')
+
+
 
 @csrf_exempt
 def whatsappwebhook(request):
@@ -46,7 +53,7 @@ def whatsappwebhook(request):
                         #numero_id = dado['changes'][0]['value']['metadata']['phone_number_id']
                         #mensagem_id = dado['changes'][0]['value']['messages'][0]['id']
                         
-                        #enviar_mensagem(whatsapp_cliente, mensagem_cliente)
+                        enviar_mensagem(whatsapp_cliente, mensagem_cliente)
                         tratar_mensagem(whatsapp_cliente, mensagem_cliente, nome_perfil, timestamp)
                     
                 except:
