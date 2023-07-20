@@ -54,7 +54,7 @@ def whatsappwebhook(request):
                         #mensagem_id = dado['changes'][0]['value']['messages'][0]['id']
                         
                         enviar_mensagem(whatsapp_cliente, mensagem_cliente)
-                        tratar_mensagem(whatsapp_cliente, mensagem_cliente, nome_perfil, timestamp)
+                        #tratar_mensagem(whatsapp_cliente, mensagem_cliente, nome_perfil, timestamp)
                     
                 except:
                     pass
