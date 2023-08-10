@@ -1,5 +1,15 @@
 from time import sleep
 class Msg():
+
+    def cardapio():
+        return '''
+Aqui está o nosso cardápio 
+
+Quando estiver pronto para 
+fazer o seu pedido,
+
+é só me chamar ok 😊😊
+'''
     sleep(1)
 
     def novo_cliente():
@@ -142,15 +152,73 @@ como posso ajudar?
     
 #------------------------------------------------------
 
-    def cardapio():
+    def pedido(nome):
+        return f'''
+Muito bem {nome}
+
+Vou anotar seu pedido agora
+Escolha entre as opções abaixo 
+👇👇
+
+1. Pizzas 🍕
+2. Bebidas 🥤
+'''
+
+#------------------------------------------------------
+
+    def quant_sabor():
         return '''
-Aqui está o nosso cardápio 
+Digite a quantidade de sabores da sua pizza:
 
+Por favor digite apenas números nessa opção  🔢
 
-Quando estiver pronto para 
-fazer o seu pedido,
+1. 1 Sabor
+2. 2 Sabores (meio-a-meio)
+3. 3 Sabores
+4. 4 Sabores
+'''
 
-é só me chamar ok
+#------------------------------------------------------
+
+    def escolha_sabor(n, sabor_unico = False):
+        resposta = f'''
+Ok
+
+Agora escolha seu  {n}° sabor preferido 🍕
+'''
+        if sabor_unico == True:
+            resposta = '''
+Ok
+
+Agora escolha seu sabor preferido 🍕
+'''
+        return resposta
+
+#------------------------------------------------------
+
+    def escolha_bebida():
+        return '''
+Ok
+
+Agora escolha sua bebida preferida 🥤
+'''
+
+#------------------------------------------------------
+
+    def continuar():
+        return '''
+Deseja continuar com o pedido ? 🛒
+'''
+
+#------------------------------------------------------
+
+    def atraso_pedido(nome):
+        return f'''
+{nome}, peço desculpas pelo inconveniente 😞
+
+Vou te transferir para um de nossos atendentes
+
+(OBS: ISSO É UMA SIMULAÇÃO, NENHUM ATENDENTE RESPONDERÁ)
 '''
 
 

@@ -48,16 +48,22 @@ def whatsappwebhook(request):
                         nome_perfil = dado['changes'][0]['value']['contacts'][0]['profile']['name']
                         whatsapp_cliente = dado['changes'][0]['value']['contacts'][0]['wa_id']
                         timestamp = dado['changes'][0]['value']['messages'][0]['timestamp']
-                        mensagem_cliente = dado['changes'][0]['value']['messages'][0]['text']['body']
+                        try:
+                            mensagem_cliente = dado['changes'][0]['value']['messages'][0]['text']['body']
+                        except:
+                            mensagem_cliente = dado['changes'][0]['value']['messages'][0]['interactive']['button_reply']['title']
                         #numero_envio = dado['changes'][0]['value']['metadata']['display_phone_number']
                         #numero_id = dado['changes'][0]['value']['metadata']['phone_number_id']
                         #mensagem_id = dado['changes'][0]['value']['messages'][0]['id']
                         
-                        enviar_mensagem(whatsapp_cliente, mensagem_cliente)
-                        #tratar_mensagem(whatsapp_cliente, mensagem_cliente, nome_perfil, timestamp)
+                        #enviar_mensagem(whatsapp_cliente, mensagem_cliente)
+                        tratar_mensagem(whatsapp_cliente, mensagem_cliente, nome_perfil, timestamp)
                     
                 except:
                     pass
 
 
         return HttpResponse('sucesso', status= 200)
+
+
+
