@@ -68,9 +68,9 @@ def enviar_mensagem(numero, mensagem= None, pdf= False, botao= False):
 
 
     resposta = requests.post(os.getenv("WHATSAPP_URL"), headers=headers, json=json)
-    ans = resposta.json()
+    resposta = resposta.json()
 
-    return ans
+    return resposta
 
 #------------------------------------------------------------------------------------------------------------------
 

@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, HttpResponse, FileResponse
-from .funções import *
+from .funcoes import *
 from pathlib import Path
 from dotenv import load_dotenv
 from mysite.settings import BASE_DIR
@@ -13,8 +13,6 @@ load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 
 # Create your views here.
-
-
 def home(request):
     return render(request, 'mysite/index.html', {})
 
