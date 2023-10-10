@@ -8,6 +8,7 @@ from whatsappbot.models import *
 admin.site.register(Contato)
 admin.site.register(Endereco)
 # admin.site.register(Produto)
+#test
 # admin.site.register(Pizza)
 #admin.site.register(Bebida)
 
