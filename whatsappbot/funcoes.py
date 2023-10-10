@@ -77,11 +77,11 @@ def enviar_mensagem(numero, mensagem= None, pdf= False, botao= False):
 def tratar_mensagem(whatsapp_cliente, mensagem_cliente, nome_perfil, timestamp):
     global barbearia, pizzaria, saber_mais, fim_simulacao, atalhos
 
-    pesq_cliente = Cliente.objects.filter(whatsapp__contains=whatsapp_cliente).exists()
+    pesq_cliente = Contato.objects.filter(whatsapp__contains=whatsapp_cliente).exists()
     if pesq_cliente == False:
-        Cliente.objects.create(nome=nome_perfil, whatsapp=whatsapp_cliente, status_conversa='cadastrar cliente')
+        Contato.objects.create(nome=nome_perfil, whatsapp=whatsapp_cliente, status_conversa='cadastrar cliente')
 
-    cliente = Cliente.objects.get(whatsapp__contains=whatsapp_cliente)
+    cliente = Contato.objects.get(whatsapp__contains=whatsapp_cliente)
     mensagem_cliente = mensagem_cliente.lower()
     
     

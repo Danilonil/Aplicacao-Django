@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ['.ngrok-free.app', '127.0.0.1', 'whatsapp-chatbot.fly.dev']
+ALLOWED_HOSTS = ['.ngrok-free.app', '127.0.0.1', 'danilo-santos.fly.dev']
 CSRF_TRUSTED_ORIGINS = [os.getenv("link_site")]
 
 

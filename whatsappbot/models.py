@@ -18,7 +18,7 @@ class Endereco(models.Model):
     def __str__(self):
         return self.rua
 
-class Cliente(models.Model):
+class Contato(models.Model):
     id = models.AutoField(primary_key=True)
     nome = models.CharField(max_length= 30)
     whatsapp = models.CharField(max_length=15, unique= True)
